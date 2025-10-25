@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones - Inglés Básico Online</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@400,500,600,700,800&display=swap" rel="stylesheet">
+    <style>
+        * {margin:0; padding:0; box-sizing: border-box; text-decoration: none;}
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #101116;
+            color: #A0A0A0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            background-image: url(images/images/bg.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .menu {
+            position: absolute;
+            top: 20px;
+            left: 0; right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+        }
+        .logo { width: 150px; }
+        .menu .navbar ul { list-style: none; }
+        .menu .navbar ul li { position: relative; float: left; }
+        .menu .navbar ul li a {
+            font-size: 18px; padding: 20px; color: #FDFDFD;
+            display: block; text-transform: uppercase;
+        }
+        .menu .navbar ul li a:hover { color: #E70825; }
+        #menu { display: none; }
+        .menu-icono { width: 25px; }
+        .menu label { cursor: pointer; display: none; }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 0 40px 0;
+        }
+        .header-txt {
+            width: 60%;
+            text-align: center;
+        }
+        .header-txt h1 {
+            font-size: 55px; line-height: 70px; font-weight: 800;
+            color:#FDFDFD; margin-bottom: 15px;
+        }
+        .header-txt .subtitle {
+            font-size: 22px; color: #A0A0A0; margin-bottom: 15px;
+        }
+        .main-content {
+            background: rgba(36,37,42,0.98);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.20);
+            padding: 42px 40px 32px 40px;
+            margin-bottom: 60px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .main-content h1 {
+            text-align: center; margin-bottom: 30px;
+            background: linear-gradient(90deg, #E70825 0%, #900314 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #E70825;
+            font-size: 2.5em;
+        }
+        .main-content .subtitle {
+            color: #A0A0A0;
+            font-size: 1.2em;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .section {
+            margin-bottom: 35px;
+        }
+        .section h2 {
+            color: #E70825;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #E70825;
+            font-weight: 600;
+        }
+        .section h3 {
+            color: #FDFDFD;
+            font-size: 1.3em;
+            margin: 20px 0 10px 0;
+            font-weight: 500;
+        }
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+            color: #A0A0A0;
+        }
+        .section ul {
+            margin: 15px 0;
+            padding-left: 25px;
+        }
+        .section li {
+            margin-bottom: 8px;
+            color: #A0A0A0;
+        }
+        .highlight {
+            background: #23242a;
+            padding: 20px;
+            border-radius: 15px;
+            margin: 20px 0;
+            border-left: 5px solid #E70825;
+        }
+        .contact-info {
+            background: linear-gradient(90deg, #E70825 0%, #900314 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 30px;
+            text-align: center;
+        }
+        .contact-info h3 {
+            color: white;
+            margin-bottom: 15px;
+        }
+        .footer {
+            padding: 100px 0 60px 0;
+            display: flex;
+            justify-content: space-between;
+            background-color: #101116;
+        }
+        .logo-2 { width: 150px; }
+        .links h4 { color: #fdfdfd; text-transform: uppercase; margin-bottom: 25px; }
+        .links ul li a { color: #fdfdfd; font-size: 16px; margin-bottom: 5px; display: inline-block; }
+        .socials { display: flex; }
+        .social {
+            margin: 0 10px; height: 40px; width: 40px;
+            border: 1px solid #DD241B; border-radius: 50%;
+        }
+        .social:hover { background-color: #DD241B; }
+        .social img { margin: 8px 0 0 10px; }
+        ul { margin-bottom: 15px; }
+        @media (max-width: 991px) {
+            .main-content { padding: 18px 4vw; }
+            .header-content { flex-direction: column; padding: 80px 10px 30px 10px; }
+            .header-txt { width: 100%; text-align: center; }
+            .header-txt h1 { font-size: 2.4rem; }
+            .footer { padding: 30px; flex-direction: column; align-items: center; text-align: center; }
+            .links h4 { margin: 25px 0 10px 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="menu container">
+            <a href="#"><img src="images/a_logo_design_for_image_-Photoroom.png" class="logo" alt="logo"></a>
+            <input type="checkbox" id="menu">
+            <label for="menu"><img src="images/images/menu.png" class="menu-icono" alt="menu-icono"></label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="inicioindex.html">Inicio</a></li>
+                    <li><a href="#">Aprender Inglés</a></li>
+                    <li><a href="contactosindex.html">Contactos</a></li>
+                    <li><a href="creditosindex.html">Créditos</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1>Términos y Condiciones</h1>
+                <p class="subtitle">Inglés Básico Online - Adriana & Carlos</p>
+            </div>
+        </div>
+    </header>
+    <main class="main-content container">
+        <h1>Términos y Condiciones</h1>
+        <div class="subtitle">Inglés Básico Online - Adriana & Carlos</div>
+
+        <div class="section">
+            <h2>1. Información General</h2>
+            <p>Bienvenido a nuestro curso de Inglés Básico Online. Estos términos y condiciones rigen el uso de nuestros servicios educativos proporcionados por Adriana y Carlos. Al acceder y utilizar nuestros servicios, aceptas cumplir con estos términos.</p>
+            <div class="highlight">
+                <strong>Fecha de última actualización:</strong> Junio 2025<br>
+                <strong>Instructores:</strong> Adriana & Carlos<br>
+                <strong>Modalidad:</strong> 100% Online
+            </div>
+        </div>
+        <div class="section">
+            <h2>2. Servicios Ofrecidos</h2>
+            <h3>2.1 Contenido del Curso</h3>
+            <p>Nuestro curso de inglés básico incluye:</p>
+            <ul>
+                <li>Lecciones interactivas de gramática básica</li>
+                <li>Vocabulario esencial para principiantes</li>
+                <li>Ejercicios de comprensión auditiva</li>
+                <li>Práctica de conversación básica</li>
+                <li>Material de apoyo descargable</li>
+                <li>Evaluaciones periódicas</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>3. Acceso al Contenido</h2>
+            <p>Una vez que inicies el curso, tendrás acceso completo a todo el material educativo. El progreso es autodidacta y flexible según tu horario personal.</p>
+        </div>
+        <div class="section">
+            <h2>4. Derechos y Responsabilidades del Usuario</h2>
+            <h3>4.1 Uso Apropiado</h3>
+            <p>Te comprometes a:</p>
+            <ul>
+                <li>Usar el contenido únicamente para fines educativos personales</li>
+                <li>No compartir credenciales de acceso con terceros</li>
+                <li>Respetar los derechos de autor del material</li>
+                <li>Mantener un comportamiento respetuoso en foros y chats</li>
+            </ul>
+            <h3>4.2 Prohibiciones</h3>
+            <p>Está prohibido:</p>
+            <ul>
+                <li>Descargar, copiar o distribuir el contenido sin autorización</li>
+                <li>Realizar ingeniería inversa de la plataforma</li>
+                <li>Usar el servicio para fines comerciales sin permiso</li>
+                <li>Publicar contenido ofensivo o inapropiado</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>5. Propiedad Intelectual</h2>
+            <p>Todo el contenido del curso, incluyendo pero no limitado a textos, videos, audios, imágenes y ejercicios, es propiedad exclusiva de Adriana y Carlos. Este contenido está protegido por leyes de derechos de autor y propiedad intelectual.</p>
+            <p>Se otorga una licencia limitada, no exclusiva y no transferible para acceder y usar el contenido únicamente para fines educativos personales durante el período de acceso contratado.</p>
+        </div>
+        <div class="section">
+            <h2>6. Privacidad y Protección de Datos</h2>
+            <h3>6.1 Recopilación de Información</h3>
+            <p>Recopilamos información necesaria para proporcionar nuestros servicios, incluyendo:</p>
+            <ul>
+                <li>Datos de contacto (nombre, email, teléfono)</li>
+                <li>Información de progreso académico</li>
+                <li>Datos de navegación y uso de la plataforma</li>
+            </ul>
+            <h3>6.2 Uso de la Información</h3>
+            <p>Utilizamos tu información para:</p>
+            <ul>
+                <li>Proporcionar y mejorar nuestros servicios</li>
+                <li>Comunicarnos contigo sobre tu progreso</li>
+                <li>Enviar actualizaciones y material complementario</li>
+                <li>Analizar y mejorar la experiencia educativa</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>7. Limitación de Responsabilidad</h2>
+            <p>Adriana y Carlos se comprometen a proporcionar contenido educativo de calidad, sin embargo:</p>
+            <ul>
+                <li>No garantizamos resultados específicos de aprendizaje</li>
+                <li>No somos responsables por interrupciones técnicas temporales</li>
+                <li>El progreso depende del esfuerzo y dedicación individual</li>
+                <li>No nos hacemos responsables por decisiones tomadas basadas en el contenido del curso</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>8. Modificaciones y Actualizaciones</h2>
+            <p>Nos reservamos el derecho de modificar estos términos y condiciones en cualquier momento. Las modificaciones entrarán en vigor inmediatamente después de su publicación en nuestra plataforma. Te notificaremos sobre cambios significativos mediante email.</p>
+            <p>También podemos actualizar, modificar o descontinuar cualquier aspecto del servicio con previo aviso de 30 días.</p>
+        </div>
+        <div class="section">
+            <h2>9. Terminación del Servicio</h2>
+            <h3>9.1 Por Parte del Usuario</h3>
+            <p>Puedes contactarnos en cualquier momento si deseas discontinuar el uso del curso.</p>
+            <h3>9.2 Por Nuestra Parte</h3>
+            <p>Podemos suspender o terminar tu acceso si:</p>
+            <ul>
+                <li>Violas estos términos y condiciones</li>
+                <li>Usas el servicio de manera fraudulenta</li>
+                <li>No cumples con las políticas establecidas</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>10. Ley Aplicable y Resolución de Disputas</h2>
+            <p>Estos términos se rigen por las leyes de Bolivia. Cualquier disputa será resuelta mediante diálogo directo y, de ser necesario, a través de mediación o arbitraje en La Paz, Bolivia.</p>
+            <p>Nos comprometemos a resolver cualquier inconveniente de manera amigable y profesional.</p>
+        </div>
+        <div class="contact-info">
+            <h3>Información de Contacto</h3>
+            <p><strong>Instructores:</strong> Adriana & Carlos</p>
+            <p><strong>Email:</strong> info@inglesbasicoonline.com</p>
+            <p><strong>Horario de Atención:</strong> Lunes a Viernes, 9:00 AM - 6:00 PM (BOT)</p>
+            <p><strong>Ubicación:</strong> La Paz, Bolivia</p>
+        </div>
+    </main>
+    <!-- FOOTER igual que index2.html -->
+    <footer class="footer container">
+        <img class="logo-2" src="images/a_logo_design_for_image_-Photoroom.png" alt="">
+        <div class="links">
+            <h4>Cursos</h4>
+            <ul>
+                <li><a href="inglesbasicofinal.index.html">Inglés Básico</a></li>
+                <li><a href="inglesinermedio.index.html">Inglés Intermedio</a></li>
+                <li><a href="conversasion.index.html">Conversación</a></li>
+                <li><a href="vocabulario.ind3ex.html">Vocabulario</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <h4>Ayuda Primera Persona</h4>
+            <ul>
+                <li><a href="https://www.dictionary.com/browse/fag">FAG</a></li>
+                <li><a href="soporteindex.html">Soporte</a></li>
+                <li><a href="contactosindex.html">Contacto</a></li>
+                <li><a href="terminosycondiciones.index.html">Termino</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <h4>Ayuda Segunda Persona</h4>
+            <ul>
+                <li><a href="https://www.dictionary.com/browse/fag">FAG</a></li>
+                <li><a href="soporteindex.html">Soporte</a></li>
+                <li><a href="contactosindex.html">Contacto</a></li>
+                <li><a href="terminosycondiciones.index.html">Termino</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <h4>Redes Sociales</h4>
+            <div class="socials">
+                <a href="https://www.facebook.com/profile.php?id=61577921922825">
+                    <div class="social">
+                        <img src="images/images/s1.svg" alt="">
+                    </div>
+                </a>
+                <a href="https://x.com/C_A_English">
+                    <div class="social">
+                        <img src="images/images/s2.svg" alt="">
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/c_a_english_academy/">
+                    <div class="social">
+                        <img src="images/images/s3.svg" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

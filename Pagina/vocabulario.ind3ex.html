@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vocabulario en Inglés Básico</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@400,500,600,700,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #101116;
+            color: #A0A0A0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            background-image: url(images/images/bg.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .menu{
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+        }
+        .logo {
+            width: 150px;
+        }
+        .menu .navbar ul {
+            list-style: none;
+        }
+        .menu .navbar ul li {
+            position: relative;
+            float: left;
+        }
+        .menu .navbar ul li a {
+            font-size: 18px;
+            padding: 20px;
+            color: #FDFDFD;
+            display: block;
+            text-transform: uppercase;
+        }
+        .menu .navbar ul li a:hover {
+            color: #E70825;
+        }
+        #menu {
+            display: none;
+        }
+        .menu-icono {
+            width: 25px;
+        }
+        .menu label {
+            cursor: pointer;
+            display: none;
+        }
+        /* Adapted header */
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 0 60px 0;
+        }
+        .header-txt {
+            width: 60%;
+            padding-right: 25px;
+            text-align: center;
+        }
+        .header-txt h1 {
+            font-size: 55px;
+            line-height: 70px;
+            font-weight: 800;
+            color:#FDFDFD;
+            margin-bottom: 10px;
+        }
+        .header-txt .subtitle {
+            font-size: 22px;
+            color: #A0A0A0;
+            margin-bottom: 10px;
+        }
+        /* MAIN CONTENT ADAPTADO */
+        .main-content {
+            background: rgba(36,37,42,0.98);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.20);
+            padding: 42px 40px 32px 40px;
+            margin-bottom: 60px;
+        }
+        .vocabulary-section {
+            margin-bottom: 40px;
+        }
+        .section-title {
+            color: #E70825;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-left: 4px solid #E70825;
+            padding-left: 15px;
+        }
+        .vocab-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            list-style: none;
+            padding: 0;
+        }
+        .vocab-item {
+            background: #23242a;
+            padding: 15px 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            border-left: 4px solid #E70825;
+        }
+        .vocab-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            background: #2a2b31;
+        }
+        .english-word {
+            font-weight: bold;
+            color: #FDFDFD;
+            font-size: 1.1em;
+        }
+        .spanish-word {
+            color: #A0A0A0;
+            font-style: italic;
+        }
+        .learn-again-section {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(90deg, #E70825 0%, #900314 100%);
+            border-radius: 20px;
+            margin-top: 30px;
+        }
+        .learn-again-button {
+            background: #FDFDFD;
+            color: #E70825;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(220,20,60,0.4);
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .learn-again-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(220,20,60,0.6);
+            background: #E70825;
+            color: #FDFDFD;
+        }
+        .learn-again-button:active {
+            transform: translateY(-1px);
+        }
+        @media (max-width: 991px) {
+            .main-content {
+                padding: 18px 4vw;
+            }
+            .header-content {
+                flex-direction: column;
+                padding: 80px 10px 30px 10px;
+            }
+            .header-txt {
+                width: 100%;
+                padding: 0;
+                text-align: center;
+            }
+            .header-txt h1 {
+                font-size: 2.4rem;
+            }
+            .footer {
+                padding: 30px; 
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .links h4 {
+                margin: 25px 0 10px 0;
+            }
+            .vocab-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* FOOTER */
+        .footer {
+            padding: 100px 0 60px 0;
+            display: flex;
+            justify-content: space-between;
+            background-color: #101116;
+        }
+        .logo-2 {
+            width: 150px;
+        }
+        .links h4 {
+            color: #fdfdfd;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+        .links ul li a {
+            color: #fdfdfd;
+            font-size: 16px;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+        .socials {
+            display: flex;
+        }
+        .social {
+            margin: 0 10px;
+            height: 40px;
+            width: 40px;
+            border: 1px solid #DD241B;
+            border-radius: 50%;
+        }
+        .social:hover {
+            background-color: #DD241B;
+        }
+        .social img {
+            margin: 8px 0 0 10px;
+        }
+        ul {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="menu container">
+            <a href="#"><img src="images/a_logo_design_for_image_-Photoroom.png" class="logo" alt="logo"></a>
+            <input type="checkbox" id="menu">
+            <label for="menu"><img src="images/images/menu.png" class="menu-icono" alt="menu-icono"></label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="inicioindex.html">Inicio</a></li>
+                    <li><a href="#">Aprender Inglés</a></li>
+                    <li><a href="contactosindex.html">Contactos</a></li>
+                    <li><a href="creditosindex.html">Créditos</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1>Vocabulario en Inglés Básico</h1>
+                <p class="subtitle">Palabras esenciales para comunicarte en inglés</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content container">
+        <div class="vocabulary-section">
+            <h2 class="section-title">Palabras Básicas del Día a Día</h2>
+            <ul class="vocab-list">
+                <li class="vocab-item">
+                    <span class="english-word">Hello</span>
+                    <span class="spanish-word">Hola</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">Goodbye</span>
+                    <span class="spanish-word">Adiós</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">Please</span>
+                    <span class="spanish-word">Por favor</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">Thank you</span>
+                    <span class="spanish-word">Gracias</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">Yes</span>
+                    <span class="spanish-word">Sí</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">No</span>
+                    <span class="spanish-word">No</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">Water</span>
+                    <span class="spanish-word">Agua</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">Food</span>
+                    <span class="spanish-word">Comida</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">House</span>
+                    <span class="spanish-word">Casa</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">Time</span>
+                    <span class="spanish-word">Tiempo</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">Money</span>
+                    <span class="spanish-word">Dinero</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">Work</span>
+                    <span class="spanish-word">Trabajo</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="vocabulary-section">
+            <h2 class="section-title">Verbos Importantes</h2>
+            <ul class="vocab-list">
+                <li class="vocab-item">
+                    <span class="english-word">To be</span>
+                    <span class="spanish-word">Ser / Estar</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">To have</span>
+                    <span class="spanish-word">Tener</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">To go</span>
+                    <span class="spanish-word">Ir</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">To come</span>
+                    <span class="spanish-word">Venir</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">To see</span>
+                    <span class="spanish-word">Ver</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">To know</span>
+                    <span class="spanish-word">Saber / Conocer</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">To want</span>
+                    <span class="spanish-word">Querer</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">To like</span>
+                    <span class="spanish-word">Gustar</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">To need</span>
+                    <span class="spanish-word">Necesitar</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">To speak</span>
+                    <span class="spanish-word">Hablar</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="vocabulary-section">
+            <h2 class="section-title">Palabras de Pregunta</h2>
+            <ul class="vocab-list">
+                <li class="vocab-item">
+                    <span class="english-word">What</span>
+                    <span class="spanish-word">Qué</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">Where</span>
+                    <span class="spanish-word">Dónde</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">When</span>
+                    <span class="spanish-word">Cuándo</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">Who</span>
+                    <span class="spanish-word">Quién</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">Why</span>
+                    <span class="spanish-word">Por qué</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">How</span>
+                    <span class="spanish-word">Cómo</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">How much</span>
+                    <span class="spanish-word">Cuánto</span>
+                </li>
+                <li class="vocab-item">
+                    <span class="english-word">How many</span>
+                    <span class="spanish-word">Cuántos</span>
+                </li>
+            </ul>
+        </div>
+
+        <div class="learn-again-section">
+            <h2 style="color:#FDFDFD;">¿Necesitas repasar estas palabras?</h2>
+            <p style="margin-bottom: 20px; font-size: 1.1em; color: #FDFDFD;">
+                No hay problema, memorizar vocabulario requiere práctica constante. 
+                Cada repaso te ayuda a recordar mejor las palabras.
+            </p>
+            <button class="learn-again-button" onclick="showVocabEncouragement()">
+                Vuelve a Estudiar Vocabulario Básico
+            </button>
+            <div id="vocab-encouragement" style="margin-top: 20px; display: none;">
+                <p style="color: #FDFDFD; font-weight: bold; font-size: 1.1em;">
+                    ¡Excelente decisión! Cada palabra que dominas te acerca más a hablar inglés con confianza. 
+                    <br>¡Sigue practicando, lo estás haciendo muy bien!
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer container">
+        <img class="logo-2" src="images/a_logo_design_for_image_-Photoroom.png" alt="">
+        <div class="links">
+            <h4>Cursos</h4>
+            <ul>
+                <li><a href="inglesbasicofinal.index.html">Inglés Básico</a></li>
+                <li><a href="inglesinermedio.index.html">Inglés Intermedio</a></li>
+                <li><a href="conversasion.index.html">Conversación</a></li>
+                <li><a href="vocabulario.ind3ex.html">Vocabulario</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <h4>Ayuda Primera Persona</h4>
+            <ul>
+                <li><a href="https://www.dictionary.com/browse/fag">FAG</a></li>
+                <li><a href="soporteindex.html">Soporte</a></li>
+                <li><a href="contactosindex.html">Contacto</a></li>
+                <li><a href="terminosycondiciones.index.html">Termino</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <h4>Ayuda Segunda Persona</h4>
+            <ul>
+                <li><a href="https://www.dictionary.com/browse/fag">FAG</a></li>
+                <li><a href="soporteindex.html">Soporte</a></li>
+                <li><a href="contactosindex.html">Contacto</a></li>
+                <li><a href="terminosycondiciones.index.html">Termino</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <h4>Redes Sociales</h4>
+            <div class="socials">
+                <a href="https://www.facebook.com/profile.php?id=61577921922825">
+                    <div class="social">
+                        <img src="images/images/s1.svg" alt="">
+                    </div>
+                </a>
+                <a href="https://x.com/C_A_English">
+                    <div class="social">
+                        <img src="images/images/s2.svg" alt="">
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/c_a_english_academy/">
+                    <div class="social">
+                        <img src="images/images/s3.svg" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function showVocabEncouragement() {
+            const encouragement = document.getElementById('vocab-encouragement');
+            const button = document.querySelector('.learn-again-button');
+            encouragement.style.display = 'block';
+            encouragement.style.animation = 'fadeInUp 0.8s ease forwards';
+            button.innerHTML = '¡Tú Puedes Hacerlo!';
+            button.style.background = '#E70825';
+            button.style.color = '#FDFDFD';
+            setTimeout(() => {
+                button.innerHTML = '¡Repasar Vocabulario!';
+                button.onclick = () => {
+                    window.location.reload();
+                };
+            }, 2000);
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const title = document.querySelector('.header-txt h1');
+            if (!title) return;
+            const text = title.textContent;
+            title.textContent = '';
+            let i = 0;
+            function typeWriter() {
+                if (i < text.length) {
+                    title.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            }
+            setTimeout(typeWriter, 500);
+        });
+    </script>
+</body>
+</html>

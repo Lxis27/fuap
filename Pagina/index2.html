@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprender inglés Básico</title>
+    <style>
+       @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@400,500,600,700,800&display=swap');
+[![Netlify Status](https://api.netlify.com/api/v1/badges/33b6b126-7cbf-409b-8a7b-12b552cea284/deploy-status)](https://app.netlify.com/projects/curious-muffin-93275e/deploys)
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #101116;
+}
+
+header {
+    background-image: url(images/images/bg.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.menu{
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+}
+
+.logo {
+    width: 150px;
+}
+
+.menu .navbar ul {
+    list-style: none;
+}
+
+.menu .navbar ul li {
+    position: relative;
+    float: left;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #FDFDFD;
+    display: block;
+    text-transform: uppercase;
+}
+.menu .navbar ul li a:hover {
+    color: #E70825;
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+        padding: 120px 0 60px 0;
+}
+
+.header-txt {
+    width: 40%;
+        padding-right: 25px;
+        text-align: center;
+}
+
+.header-txt h1 {
+    font-size: 55px;
+    line-height: 70px;
+    font-weight: 800;
+    color:#FDFDFD;
+    margin-bottom: 10px;
+        display: block;
+        text-align: center;
+}
+
+@keyframes mover-titulo {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(30px); }
+}
+
+.header-txt .subtitle {
+    font-size: 22px;
+    color: #A0A0A0;
+    margin-bottom: 10px;
+}
+
+.header-txt p {
+    font-size: 18px;
+    color: #A0A0A0;
+}
+
+.hamburger {
+    width: 100%;
+}
+
+.botones {
+    display: flex;
+    margin-top: 50px;
+}
+
+.btn-1 {
+    display: inline-block;
+    background: linear-gradient(90deg, #E70825 0%, #900314 100%);
+    padding: 10px 35px;
+    margin-right: 20px;
+    color: #FDFDFD;
+    border-radius: 25px;
+}
+
+.btn-2 {
+    display: inline-block;
+    border: 1px solid #FDFDFD;
+    padding: 10px 35px;
+    margin-right: 20px;
+    color: #FDFDFD;
+    border-radius: 25px;
+}
+
+.btn-1:hover {
+    background: linear-gradient(90deg, #f3031f 0%, #bc0217 100%);
+}
+
+.btn-2:hover {
+    border: 1px solid #fa0d29;
+}
+
+.icon {
+    width: 20px;
+}
+
+.product-menu {
+    padding: 50px 0 150px 0;
+}
+.title {
+    color: #FDFDFD;
+    font-size: 45px;
+    text-transform: uppercase;
+    margin-bottom: 45px;
+}
+
+.product {
+    display: flex;
+    position: relative;
+}
+
+.hoja {
+    right: 0;
+    position: absolute;
+    bottom: -130px;
+    width: 150px;
+}
+
+.menu-nav {
+    display: flex;
+    margin-bottom: 45px;
+}
+
+.tab {
+    margin-right: 20px;
+    text-align: center;
+    padding: 10px 35px;
+    border-radius: 25px;
+    color: #A0A0A0;
+    font-size: 16px;
+    font-weight: 800;
+    background-color: #24252A;
+    cursor: pointer;
+}
+
+.tab.active {
+    background: linear-gradient(90deg, #ee273e 0%, #fa142f 100%);
+    color: #FDFDFD;
+}
+
+.tab.active::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.visible {
+    display: initial;
+}
+
+.box-container-1,
+.box-container-2,
+.box-container-3,
+.box-container-4,
+.box-container-5,
+.box-container-6,
+.box-container-7,
+.box-container-8 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 32px;
+    margin: 0 auto 30px auto;
+    background: rgba(36,37,42,0.98);
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.20);
+    padding: 32px 24px;
+    max-width: 700px;
+}
+
+.box-1,
+.box-2,
+.box-3,
+.box-4,
+.box-5,
+.box-6,
+.box-7,
+.box-8 {
+    background: linear-gradient(120deg, #23242a 60%, #18191d 100%);
+    padding: 24px 18px;
+    border-radius: 12px;
+    z-index: 1000;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+    min-width: 220px;
+    max-width: 320px;
+    margin: 0 auto;
+    display: block;
+    border: 1.5px solid #292a2f;
+}
+
+
+.image {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.image img {
+    width: 180px;
+}
+
+.content h3 {
+    font-size: 20px;
+    color: #FDFDFD;
+}
+
+.content p {
+    font-size: 15px;
+    color: #A0A0A0;
+    line-height: 2;
+    font-size: 15px;
+    padding: 15px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    border: 1px solid #334;
+    color: #334;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: rgb(220, 20, 60);
+    border-color: rgb(220, 20, 60);
+    color:#FDFDFD;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #334;
+}
+
+.price {
+    font-size: 14px;
+    color: #A0A0A0;
+}
+
+.buy {
+    padding: 1px 15px 0px 15px;
+    border-radius: 15px;
+    background: linear-gradient(90deg, #95852C 0%, #586E25 100%);
+}
+
+.buy img {
+    width: 15px;
+}
+
+.load-more {
+
+    margin-top: 50px;
+    display: inline-block;
+    padding: 13px 35px;
+    border-radius: 25px;
+    border: 1px solid #A0A0A0;
+    color: #A0A0A0;
+    font-size: 16px;
+    cursor: pointer;
+
+}
+
+.load-more:hover {
+    background: linear-gradient(90deg, #E70B25 0%, #900314 100%);
+    border-color: rgb(220, 20, 60);
+    color: #fdfdfd;
+}
+.info {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(images/images/bg-info.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50vh;
+}
+
+.info-content {
+    display: flex;
+    position: relative;
+}
+
+.info-txt {
+    width: 60%;
+    margin-top: 85px;
+}
+
+.info-txt h2 {
+    color: #FDFDFD;
+    font-size: 55px;
+    margin-bottom: 25px;
+}
+
+.info-txt p {
+    font-size: 20px;
+    color: #A0A0A0;
+    margin-bottom: 25px;
+}
+
+.info-sec {
+    display: flex;
+}
+
+.info-1 {
+    display: flex;
+}
+
+.info-1 img {
+    width: 80px;
+}
+
+.info-2 {
+    margin-left: 25px;
+}
+
+.info-2 h3 {
+    color: #fdfdfd;
+    font-size: 25px;
+}
+
+.info-2 p {
+    color: #A0A0A0;
+    font-size: 16px;
+}
+
+.info-img {
+    position: absolute;
+    right: -55px;
+    top: -103px;
+}
+
+.info-img img {
+    width: 650px;
+}
+
+.footer {
+    padding: 150px 0 100px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo-2 {
+    width: 150px;
+}
+
+.links h4 {
+    color: #fdfdfd;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.links ul li a {
+    color: #fdfdfd;
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.socials {
+    display: flex;
+}
+
+.social {
+    margin: 0 10px;
+    height: 40px;
+    width: 40px;
+    border: 1px solid #DD241B;
+    border-radius: 50%;
+}
+
+.social:hover {
+    background-color: #DD241B;
+}
+
+.social img {
+    margin: 8px 0 0 10px;
+}
+
+@media(max-witdh: 991px ) {
+    .menu {
+        padding: 20px;
+    }
+
+    .menu label {
+        display: initial;
+    }
+
+    .menu .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #f61706;
+        display: none;
+    }
+
+    .menu .navbar ul li {
+        width: 100%;
+
+    }
+
+    .menu .navbar ul li a:hover {
+        color: #c0c0c0;
+    }
+
+    #menu:checked ~ .navbar {
+        display: initial;
+    }
+
+    .header-content {
+        flex-direction: column;
+        padding: 180px 30px 30px 30px;
+    }
+
+    .header-txt {
+        width: 100px;
+        padding: 0;
+        text-align: center;
+    }
+
+    .header-txt h1 {
+        font-size: 40px;
+    }
+
+    .botones {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn-1 {
+        margin: 0 0 20px 0;
+    }
+
+    .btn-2 {
+        margin: 0 0 20px 0;
+    }
+
+    .header-img {
+        width: 100%;
+        margin-top: 45px;
+    }
+
+    .product-menu {
+        padding: 30px;
+    }
+
+    .title {
+        margin-bottom: 20px;
+    }
+
+    .hoja {
+        display: none;
+    }
+
+    .menu-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tab {
+        margin-bottom: 25px;
+    }
+
+    .box-container {
+        grid-template-columns: 1fr;
+    }
+
+    .box .image {
+        height: 200px;
+    }
+
+    .info {
+        padding: 30px;
+        height: 70vh;
+    }
+
+    .info-txt h2 {
+        font-size: 40px;
+    }
+
+    .info-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .info-txt {
+        width: 100%;
+        margin-top: 0px;
+    }
+
+    .info-txt p {
+        margin-bottom: 5px;
+    }
+
+    .info-sec {
+        flex-direction: column;
+        padding: 0px 35px;
+    }
+
+    .info-1 {
+        flex-direction: column;
+        align-items: center;
+        padding-top: 15px;
+    }
+
+    .info-2 {
+         margin-top: 10px;
+         margin-left: 0;
+    }
+    .info-img img {
+         display: none;
+    }
+    .socials {
+         justify-content: center;
+    }
+    .social img {
+         margin: 8px 0 0 0;
+    }
+
+    .footer {
+        padding: 30px; 
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .links h4 {
+        margin: 25px 0 10px 0;
+    }
+
+
+}
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="menu container">
+            <a href="http://127.0.0.1:5500/index2.html"><img src="images/a_logo_design_for_image_-Photoroom.png" class="logo" alt="logo"></a>
+            <input type="checkbox" id="menu">
+            <label for="menu"><img src="images/WhatsApp Image 2025-09-05 at 4.09.57 PM.jpeg" class="menu-icono" alt="menu-icono"></label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="http://127.0.0.1:5500/inicioindex.html">Inicio</a></li>
+                    <li><a href="https://scratch.mit.edu/projects/1221020623/editor">Aprender Inglés</a></li>
+                    <li><a href="http://127.0.0.1:5500/contactosindex.html">Contactos</a></li>
+                    <li><a href="http://127.0.0.1:5500/creditosindex.html">Créditos</a></li>
+                </ul>
+            </nav>
+        </div> 
+
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1> INGLÉS BÁSICO</h1>
+                <p class="subtitle">Aprende inglés de manera fácil y divertida</p>
+                <div class="botones">
+                    <a href="http://127.0.0.1:5500/inicioindex.html" class="btn-1">Inicio </a>
+                    <a href="http://127.0.0.1:5500/Informacion.index.html" class="btn-2">Información <img class="icon" src="images/images/arrow.svg" alt="icon"></a>
+                </div>
+            </div>
+            <div class="header-img">
+                <img src="images/IMAGENPRINCIPAL.PNG" class="hamburger" alt="hamburger">
+            </div>
+        </div>
+    </header>
+
+    <main class="product-menu">
+        <div class="container">
+
+            <div class="product">
+                <h2 class="title">Temas de Inglés Básico</h2>
+            </div>
+            <div class="intro-box" style="background: #23242a; border-radius: 14px; box-shadow: 0 4px 18px rgba(0,0,0,0.18); padding: 22px 18px; margin-bottom: 32px; color: #A0A0A0; max-width: 800px; margin-left:auto; margin-right:auto;">
+                <strong>¡Explora los conceptos básicos del inglés!</strong><br>
+                Aquí tienes una introducción visual y rápida a los temas principales. Puedes profundizar en cada uno de ellos en la sección <b>Inicio</b> para ver más vocabulario y explicaciones verbales.<br>
+                Además, en la sección de Scratch podrás practicar de forma lúdica e interactiva.
+            </div>
+            <div class="menu-nav">
+                <div id="pro1" class="tab active">Números</div>
+                <div id="pro2" class="tab">Colores</div>
+                <div id="pro3" class="tab">Meses</div>
+                <div id="pro4" class="tab">Días</div>
+                <div id="pro5" class="tab">Animales</div>
+                <div id="pro6" class="tab">Frutas</div>
+                <div id="pro7" class="tab">Comidas</div>
+                <div id="pro8" class="tab">Vegetales</div>
+            </div>
+
+            <div class="pro1 tab-content">
+                <div class="box-container-1" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 24px; background: rgba(36,37,42,0.98); border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.20); padding: 32px 24px; max-width: 700px; margin: 0 auto 30px auto;">
+                    <div class="box-1" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">0️⃣ Zero</h3>
+                        <p class="spanish">Cero</p>
+                            <img src="images/0.PNG" alt="Zero" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-1" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">1️⃣ One</h3>
+                        <p class="spanish">Uno</p>
+                            <img src="images/1.PNG" alt="One" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-1" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">2️⃣ Two</h3>
+                        <p class="spanish">Dos</p>
+                            <img src="images/2.PNG" alt="Two" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-1" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">3️⃣ Three</h3>
+                        <p class="spanish">Tres</p>
+                            <img src="images/3.PNG" alt="Three" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-1" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">4️⃣ Four</h3>
+                        <p class="spanish">Cuatro</p>
+                            <img src="images/4.PNG" alt="Four" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-1" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">5️⃣ Five</h3>
+                        <p class="spanish">Cinco</p>
+                            <img src="images/5.PNG" alt="Five" style="width:60px; margin-top:10px;">
+                    </div>
+                </div>
+            </div>
+            <div class="pro2 tab-content">
+                <div class="box-container-2" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 24px; background: rgba(36,37,42,0.98); border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.20); padding: 32px 24px; max-width: 700px; margin: 0 auto 30px auto;">
+                    <div class="box-2" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🔴 Red</h3>
+                        <p class="spanish">Rojo</p>
+                            <img src="images/rojo.PNG" alt="Red" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-2" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🔵 Blue</h3>
+                        <p class="spanish">Azul</p>
+                            <img src="images/azul.PNG" alt="Blue" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-2" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🟡 Yellow</h3>
+                        <p class="spanish">Amarillo</p>
+                            <img src="images/amarillo.PNG" alt="Yellow" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-2" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🟢 Green</h3>
+                        <p class="spanish">Verde</p>
+                            <img src="images/verde.PNG" alt="Green" style="width:60px; margin-top:10px;">
+                    </div>
+                </div>
+            </div>
+            <div class="pro3 tab-content">
+                <div class="box-container-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 24px; background: rgba(36,37,42,0.98); border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.20); padding: 32px 24px; max-width: 700px; margin: 0 auto 30px auto;">
+                    <div class="box-3" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">❄️ January</h3>
+                        <p class="spanish">Enero</p>
+                            <img src="images/enero.PNG" alt="January" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-3" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">❄️ February</h3>
+                        <p class="spanish">Febrero</p>
+                            <img src="images/febrero.PNG" alt="February" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-3" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🌱 March</h3>
+                        <p class="spanish">Marzo</p>
+                            <img src="images/marzo.PNG" alt="March" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-3" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🌱 April</h3>
+                        <p class="spanish">Abril</p>
+                            <img src="images/abril.PNG" alt="April" style="width:60px; margin-top:10px;">
+                    </div>
+                </div>
+            </div>
+            <div class="pro4 tab-content">
+                <div class="box-container-4" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 24px; background: rgba(36,37,42,0.98); border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.20); padding: 32px 24px; max-width: 700px; margin: 0 auto 30px auto;">
+                    <div class="box-4" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🌞 Monday</h3>
+                        <p class="spanish">Lunes</p>
+                            <img src="images/monday.PNG" alt="Monday" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-4" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🌞 Tuesday</h3>
+                        <p class="spanish">Martes</p>
+                            <img src="images/martes.PNG" alt="Tuesday" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-4" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🌞 Wednesday</h3>
+                        <p class="spanish">Miércoles</p>
+                            <img src="images/miercoles.PNG" alt="Wednesday" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-4" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🌞 Thursday</h3>
+                        <p class="spanish">Jueves</p>
+                            <img src="images/jueves.PNG" alt="Thursday" style="width:60px; margin-top:10px;">
+                    </div>
+                </div>
+            </div>
+            <div class="pro5 tab-content">
+                <div class="box-container-5" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 24px; background: rgba(36,37,42,0.98); border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.20); padding: 32px 24px; max-width: 700px; margin: 0 auto 30px auto;">
+                    <div class="box-5" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🐶 Dog</h3>
+                        <p class="spanish">Perro</p>
+                            <img src="images/perro.PNG" alt="Dog" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-5" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🐱 Cat</h3>
+                        <p class="spanish">Gato</p>
+                            <img src="images/gato.PNG" alt="Cat" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-5" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🐦 Bird</h3>
+                        <p class="spanish">Pájaro</p>
+                            <img src="images/pajaro.PNG" alt="Bird" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-5" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🐟 Fish</h3>
+                        <p class="spanish">Pez</p>
+                            <img src="images/pez.PNG" alt="Fish" style="width:60px; margin-top:10px;">
+                    </div>
+                </div>
+            </div>
+            <div class="pro6 tab-content">
+                <div class="box-container-6" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 24px; background: rgba(36,37,42,0.98); border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.20); padding: 32px 24px; max-width: 700px; margin: 0 auto 30px auto;">
+                    <div class="box-6" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🍎 Apple</h3>
+                        <p class="spanish">Manzana</p>
+                            <img src="images/manzana.PNG" alt="Apple" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-6" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🍌 Banana</h3>
+                        <p class="spanish">Banana / Plátano</p>
+                            <img src="images/banana.PNG" alt="Banana" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-6" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🍊 Orange</h3>
+                        <p class="spanish">Naranja</p>
+                            <img src="images/naranja.PNG" alt="Orange" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-6" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🍐 Pear</h3>
+                        <p class="spanish">Pera</p>
+                            <img src="images/pera.PNG" alt="Pear" style="width:60px; margin-top:10px;">
+                    </div>
+                </div>
+            </div>
+            <div class="pro7 tab-content">
+                <div class="box-container-7" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 24px; background: rgba(36,37,42,0.98); border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.20); padding: 32px 24px; max-width: 700px; margin: 0 auto 30px auto;">
+                    <div class="box-7" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🍞 Bread</h3>
+                        <p class="spanish">Pan</p>
+                            <img src="images/pan.PNG" alt="Bread" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-7" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🍚 Rice</h3>
+                        <p class="spanish">Arroz</p>
+                            <img src="images/images/food.png" alt="Rice" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-7" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🍗 Chicken</h3>
+                        <p class="spanish">Pollo</p>
+                            <img src="images/pollo.PNG" alt="Chicken" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-7" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🧀 Cheese</h3>
+                        <p class="spanish">Queso</p>
+                            <img src="images/queso.PNG" alt="Cheese" style="width:60px; margin-top:10px;">
+                    </div>
+                </div>
+            </div>
+            <div class="pro8 tab-content">
+                <div class="box-container-8" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 24px; background: rgba(36,37,42,0.98); border-radius: 18px; box-shadow: 0 8px 32px rgba(0,0,0,0.20); padding: 32px 24px; max-width: 700px; margin: 0 auto 30px auto;">
+                    <div class="box-8" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🥕 Carrot</h3>
+                        <p class="spanish">Zanahoria</p>
+                            <img src="images/zanahoria.PNG" alt="Carrot" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-8" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🥬 Lettuce</h3>
+                        <p class="spanish">Lechuga</p>
+                            <img src="images/lechuga.PNG" alt="Lettuce" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-8" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🥔 Potato</h3>
+                        <p class="spanish">Papa / Patata</p>
+                            <img src="images/images/vegetables.png" alt="Potato" style="width:60px; margin-top:10px;">
+                    </div>
+                    <div class="box-8" style="background: linear-gradient(120deg, #23242a 60%, #18191d 100%); padding: 18px 10px; border-radius: 12px; box-shadow: 0 5px 18px rgba(0,0,0,0.18); min-width: 100px; text-align: center; border: 1.5px solid #292a2f;">
+                        <h3 style="color:#E70825;">🍅 Tomato</h3>
+                        <p class="spanish">Tomate</p>
+                            <img src="images/tomate.PNG" alt="Tomato" style="width:60px; margin-top:10px;">
+                    </div>
+                </div>
+            </div>
+
+            <div class="pro2 tab-content">
+                <div class="box-container-2">
+                    <div class="box-2">
+                        <div class="image">
+                            <img src="images/images/vocabulario.png" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>Colores</h3>
+                            <p>
+                                Red - Rojo<br>
+                                Blue - Azul<br>
+                                Green - Verde<br>
+                                Yellow - Amarillo
+                            </p>
+                        </div>
+                    </div>
+                    <div class="box-2">
+                        <div class="image">
+                            <img src="images/images/numbers.png" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>Números</h3>
+                            <p>
+                                One - Uno<br>
+                                Two - Dos<br>
+                                Three - Tres<br>
+                                Four - Cuatro
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pro3 tab-content">
+                <div class="box-container-3">
+                    <div class="box-3">
+                        <div class="image">
+                            <img src="images/images/frases.png" alt="">
+                        </div>
+                        <div class="content">
+                            <h3>Frases Útiles</h3>
+                            <p>
+                                How are you? - ¿Cómo estás?<br>
+                                I don't understand - No entiendo<br>
+                                Where is the bathroom? - ¿Dónde está el baño?<br>
+                                How much is it? - ¿Cuánto cuesta?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section class="info">
+        <div class="info-content container">
+            <div class="info-txt">
+                <p>What Is English</p>
+                <h2>Información</h2>
+                <div class="info-sec">
+                    <div class="info-1">
+                        <img src="images/images/f1.sv" alt="">
+                        <div class="info-2">
+                            <h3>¿Por qué aprender inglés?</h3>
+                            <p>
+                                Aprender inglés te permite comunicarte con personas de todo el mundo y acceder a mejores oportunidades educativas y laborales.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="info-1">
+                        <img src="images/images/f2.sv" alt="">
+                        <div class="info-2">
+                            <h3>Consejos para aprender</h3>
+                            <p>
+                                Practica todos los días, escucha música en inglés, mira películas con subtítulos y no tengas miedo de cometer errores.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="info-img">
+                <img src="images/images/info.pn" alt="">
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer container">
+        <img class="logo-2" src="images/a_logo_design_for_image_-Photoroom.png" alt="">
+        <div class="links">
+            <h4>Cursos</h4>
+            <ul>
+                <li><a href="http://127.0.0.1:5500/inglesbasicofinal.index.html">Inglés Básico</a></li>
+                <li><a href="http://127.0.0.1:5500/inglesinermedio.index.html">Inglés Intermedio</a></li>
+                <li><a href="http://127.0.0.1:5500/conversasion.index.html">Conversación</a></li>
+                <li><a href="http://127.0.0.1:5500/vocabulario.ind3ex.html">Vocabulario</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <h4>Ayuda Primera Persona</h4>
+            <ul>
+                <li><a href="https://www.dictionary.com/browse/fag">FAG</a></li>
+                <li><a href="http://127.0.0.1:5500/soporteindex.html">Soporte</a></li>
+                <li><a href="http://127.0.0.1:5500/contactosindex.html">Contacto</a></li>
+                <li><a href="http://127.0.0.1:5500/terminosycondiciones.index.html">Termino</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <h4>Ayuda Segunda Persona</h4>
+            <ul>
+                <li><a href="https://www.dictionary.com/browse/fag">FAG</a></li>
+                <li><a href="http://127.0.0.1:5500/soporteindex.html">Soporte</a></li>
+                <li><a href="http://127.0.0.1:5500/contactosindex.html">Contacto</a></li>
+                <li><a href="http://127.0.0.1:5500/terminosycondiciones.index.html">Termino</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <h4>Redes Sociales</h4>
+            <div class="socials">
+                <a href="https://www.facebook.com/profile.php?id=61577921922825">
+                    <div class="social">
+                        <img src="images/images/s1.svg" alt="">
+                    </div>
+                </a>
+                <a href="https://x.com/C_A_English">
+                    <div class="social">
+                        <img src="images/images/s2.svg" alt="">
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/c_a_english_academy/">
+                    <div class="social">
+                        <img src="images/images/s3.svg" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const title = document.querySelector('.header-txt h1');
+            if (!title) return;
+            const text = title.textContent;
+            title.textContent = '';
+            let i = 0;
+            function typeWriter() {
+                if (i < text.length) {
+                    title.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 100);
+                }
+            }
+            setTimeout(typeWriter, 500);
+        });
+
+        function E(selector, parent) {
+    if (selector instanceof HTMLElement)
+        return selector;
+    
+    return (parent || document).querySelectorAll(selector);
+}
+
+function hasClass(element, className) {
+    return element.classList.contains(className);
+}
+
+function radioClass(element, className) {
+    E("." + className).forEach((elem) => 
+        elem.classList.remove(className));
+    element.classList.toggle(className);
+}
+
+function tabs(nav) {
+    let navElem = E(nav)[0];
+    
+    navElem.addEventListener("click", (e) => {
+        let target = e.target;
+        
+        if(hasClass(target, "tab"))
+            radioClass(target, "active");
+        
+        let linkedTab = E("." + target.id)[0];
+    
+        if (linkedTab) {
+            radioClass(linkedTab, "visible");
+        }
+    });
+    
+    let active = E(".tab.active")[0];
+    if (active) {
+
+        let activeElement = E("." + active.id)[0];
+        if (activeElement) {
+            radioClass(activeElement, "visible");
+        }
+    }
+}
+
+tabs(".menu-nav")
+
+let loadMoreBtn1 = document.querySelector('#load-more-1');
+let currentItem1 = 4;
+
+
+if (loadMoreBtn1) {
+    loadMoreBtn1.onclick = () => {
+        let boxes = [...document.querySelectorAll('.box-container-1 .box-1')];
+        for(var i = currentItem1; i < currentItem1 + 4; i++) {
+            
+            if (boxes[i]) {
+                boxes[i].style.display = 'inline-block';
+            }
+        }
+        currentItem1 += 4;
+        if(currentItem1 >= boxes.length) {
+            loadMoreBtn1.style.display = 'none';
+        }
+    }
+}
+
+let loadMoreBtn2 = document.querySelector('#load-more-2');
+let currentItem2 = 4;
+
+if (loadMoreBtn2) {
+    loadMoreBtn2.onclick = () => {
+        let boxes = [...document.querySelectorAll('.box-container-2 .box-2')];
+        for(var i = currentItem2; i < currentItem2 + 4; i++) {
+            if (boxes[i]) {
+                boxes[i].style.display = 'inline-block';
+            }
+        }
+        currentItem2 += 4;
+        if(currentItem2 >= boxes.length) {
+            loadMoreBtn2.style.display = 'none';
+        }
+    }
+}
+
+let loadMoreBtn3 = document.querySelector('#load-more-3');
+let currentItem3 = 4;
+
+if (loadMoreBtn3) {
+    loadMoreBtn3.onclick = () => {
+        let boxes = [...document.querySelectorAll('.box-container-3 .box-3')];
+        for(var i = currentItem3; i < currentItem3 + 4; i++) {
+            if (boxes[i]) {
+                boxes[i].style.display = 'inline-block';
+            }
+        }
+        currentItem3 += 4;
+        if(currentItem3 >= boxes.length) {
+            loadMoreBtn3.style.display = 'none';
+        }
+    }
+}
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('.menu-nav .tab');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach((tab, i) => {
+        tab.addEventListener('click', function() {
+           
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.style.display = 'none');
+
+           
+            tab.classList.add('active');
+            contents[i].style.display = 'block';
+        });
+    });
+
+    
+    contents.forEach((c, i) => {
+        if (i !== 0) c.style.display = 'none';
+    });
+});
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inglés Básico - Fundamentos Esenciales</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@400,500,600,700,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #101116;
+            color: #A0A0A0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            background-image: url(images/images/bg.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .menu{
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+        }
+        .logo {
+            width: 150px;
+        }
+        .menu .navbar ul {
+            list-style: none;
+        }
+        .menu .navbar ul li {
+            position: relative;
+            float: left;
+        }
+        .menu .navbar ul li a {
+            font-size: 18px;
+            padding: 20px;
+            color: #FDFDFD;
+            display: block;
+            text-transform: uppercase;
+        }
+        .menu .navbar ul li a:hover {
+            color: #E70825;
+        }
+        #menu {
+            display: none;
+        }
+        .menu-icono {
+            width: 25px;
+        }
+        .menu label {
+            cursor: pointer;
+            display: none;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 180px 0 80px 0;
+        }
+        .header-txt {
+            width: 60%;
+            padding-right: 25px;
+        }
+        .header-txt h1 {
+            font-size: 55px;
+            line-height: 70px;
+            font-weight: 800;
+            color:#FDFDFD;
+            margin-bottom: 15px;
+        }
+        .header-txt .subtitle {
+            font-size: 22px;
+            color: #A0A0A0;
+            margin-bottom: 15px;
+        }
+
+        .main-content {
+            background: rgba(36,37,42,0.98);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.20);
+            padding: 42px 40px 32px 40px;
+            margin-bottom: 60px;
+        }
+        h2 {
+            color: #E70825;
+            font-size: 28px;
+            margin: 28px 0 15px 0;
+            border-bottom: 2px solid #E70825;
+            padding-bottom: 8px;
+        }
+        h3 {
+            color: #FDFDFD;
+        }
+        .intro-box {
+            background: #24252A;
+            padding: 20px;
+            border-left: 4px solid #E70825;
+            margin: 20px 0;
+            color: #A0A0A0;
+        }
+        .basics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .basic-item {
+            background: #1a1b20;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #24252A;
+        }
+        .vocab-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        .vocab-table th, .vocab-table td {
+            border: 1px solid #334;
+            padding: 10px;
+            text-align: left;
+        }
+        .vocab-table th {
+            background: #24252A;
+            font-weight: bold;
+            color: #E70825;
+        }
+        .vocab-table tr:nth-child(even) {
+            background: #24252A;
+        }
+        .english {
+            font-weight: bold;
+            color: #FDFDFD;
+        }
+        .spanish {
+            color: #A0A0A0;
+        }
+        /* SECTION CONTINUE */
+        .continue-section {
+            background: linear-gradient(90deg, #E70825 0%, #900314 100%);
+            padding: 30px;
+            text-align: center;
+            color: #FDFDFD;
+            border-radius: 25px;
+            margin-bottom: 60px;
+        }
+        .continue-btn {
+            background: #FDFDFD;
+            color: #E70825;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+        .continue-btn:hover {
+            background: #E70825;
+            color: #FDFDFD;
+            box-shadow: 0 5px 15px rgba(220,20,60,0.2);
+        }
+        /* FOOTER */
+        .footer {
+            padding: 100px 0 60px 0;
+            display: flex;
+            justify-content: space-between;
+            background-color: #101116;
+        }
+        .logo-2 {
+            width: 150px;
+        }
+        .links h4 {
+            color: #fdfdfd;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+        .links ul li a {
+            color: #fdfdfd;
+            font-size: 16px;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+        .socials {
+            display: flex;
+        }
+        .social {
+            margin: 0 10px;
+            height: 40px;
+            width: 40px;
+            border: 1px solid #DD241B;
+            border-radius: 50%;
+        }
+        .social:hover {
+            background-color: #DD241B;
+        }
+        .social img {
+            margin: 8px 0 0 10px;
+        }
+        ul {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+        @media(max-width: 991px) {
+            .main-content {
+                padding: 18px 4vw;
+            }
+            .header-content {
+                flex-direction: column;
+                padding: 80px 10px 30px 10px;
+            }
+            .header-txt {
+                width: 100%;
+                padding: 0;
+                text-align: center;
+            }
+            .header-txt h1 {
+                font-size: 2.4rem;
+            }
+            .footer {
+                padding: 30px; 
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .links h4 {
+                margin: 25px 0 10px 0;
+            }
+        }
+    </style>
+    </style>
+    <script>
+    function showImage(word, imgSrc) {
+        let modal = document.getElementById('img-modal');
+        let modalImg = document.getElementById('img-modal-img');
+        let modalText = document.getElementById('img-modal-text');
+        modal.style.display = 'block';
+        modalImg.src = imgSrc;
+        modalText.textContent = word;
+    }
+
+    function closeModal() {
+        document.getElementById('img-modal').style.display = 'none';
+    }
+    </script>
+</head>
+<body>
+
+<!-- Modal para mostrar imagen -->
+<div id="img-modal" style="display:none; position:fixed; z-index:9999; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.7); justify-content:center; align-items:center;">
+    <div style="background:#23242a; border-radius:16px; padding:32px; max-width:350px; margin:auto; text-align:center; position:relative;">
+        <span onclick="closeModal()" style="position:absolute; top:10px; right:18px; color:#fff; font-size:28px; cursor:pointer;">&times;</span>
+        <img id="img-modal-img" src="" alt="Imagen" style="width:120px; margin-bottom:18px;">
+        <div id="img-modal-text" style="color:#fff; font-size:20px;"></div>
+    </div>
+</div>
+
+    <header>
+        <div class="menu container">
+            <a href="http://127.0.0.1:5500/index2.html"><img src="images/a_logo_design_for_image_-Photoroom.png" class="logo" alt="logo"></a>
+            <input type="checkbox" id="menu">
+            <label for="menu"><img src="images/images/menu.png" class="menu-icono" alt="menu-icono"></label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="inicioindex.html">Inicio</a></li>
+                    <li><a href="#">Aprender Inglés</a></li>
+                    <li><a href="contactosindex.html">Contactos</a></li>
+                    <li><a href="creditosindex.html">Créditos</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1>Inglés Básico</h1>
+                <p class="subtitle">Fundamentos Esenciales para Principiantes</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content container">
+        <div class="intro-box">
+            <p><strong>Vocabulario básico en inglés y español</strong> para aprender lo esencial de forma visual y rápida.</p>
+        </div>
+        <section>
+            <h2>Elementos Básicos</h2>
+            <div class="basics-grid">
+                <div class="basic-item">
+                    <h3>Números 0-10</h3>
+                        <!-- # Las imágenes de los números van en: images/images/numbers/zero.png, one.png, two.png, ... -->
+                        <table class="vocab-table">
+                            <tr><td class="spanish">0</td><td class="english" onclick="showImage('Zero', 'images/0.PNG')" style="cursor:pointer;">Zero</td></tr>
+                            <tr><td class="spanish">1</td><td class="english" onclick="showImage('One', 'images/1.PNG')" style="cursor:pointer;">One</td></tr>
+                            <tr><td class="spanish">2</td><td class="english" onclick="showImage('Two', 'images/2.PNG')" style="cursor:pointer;">Two</td></tr>
+                            <tr><td class="spanish">3</td><td class="english" onclick="showImage('Three', 'images/3.PNG')" style="cursor:pointer;">Three</td></tr>
+                            <tr><td class="spanish">4</td><td class="english" onclick="showImage('Four', 'images/4.PNG')" style="cursor:pointer;">Four</td></tr>
+                            <tr><td class="spanish">5</td><td class="english" onclick="showImage('Five', 'images/5.PNG')" style="cursor:pointer;">Five</td></tr>
+                            <tr><td class="spanish">6</td><td class="english" onclick="showImage('Six', 'images/6.PNG')" style="cursor:pointer;">Six</td></tr>
+                            <tr><td class="spanish">7</td><td class="english" onclick="showImage('Seven', 'images/7.PNG')" style="cursor:pointer;">Seven</td></tr>
+                            <tr><td class="spanish">8</td><td class="english" onclick="showImage('Eight', 'images/8.PNG')" style="cursor:pointer;">Eight</td></tr>
+                            <tr><td class="spanish">9</td><td class="english" onclick="showImage('Nine', 'images/9.PNG')" style="cursor:pointer;">Nine</td></tr>
+                            <tr><td class="spanish">10</td><td class="english" onclick="showImage('Ten', 'images/10.PNG')" style="cursor:pointer;">Ten</td></tr>
+                        </table>
+                </div>
+                <div class="basic-item">
+                    <h3>Colores</h3>
+                        <!-- # Las imágenes de los colores van en: images/images/colors/red.png, blue.png, yellow.png, ... -->
+                    <table class="vocab-table">
+                        <tr><td class="spanish">Rojo</td><td class="english">Red</td></tr>
+                            <tr><td class="spanish">Rojo</td><td class="english" onclick="showImage('Red', 'images/rojo.PNG')" style="cursor:pointer;">Red</td></tr>
+                        <tr><td class="spanish">Azul</td><td class="english">Blue</td></tr>
+                            <tr><td class="spanish">Azul</td><td class="english" onclick="showImage('Blue', 'images/azul.PNG')" style="cursor:pointer;">Blue</td></tr>
+                        <tr><td class="spanish">Amarillo</td><td class="english">Yellow</td></tr>
+                            <tr><td class="spanish">Amarillo</td><td class="english" onclick="showImage('Yellow', 'images/amarillo.PNG')" style="cursor:pointer;">Yellow</td></tr>
+                        <tr><td class="spanish">Verde</td><td class="english">Green</td></tr>
+                            <tr><td class="spanish">Verde</td><td class="english" onclick="showImage('Green', 'images/verde.PNG')" style="cursor:pointer;">Green</td></tr>
+                        <tr><td class="spanish">Blanco</td><td class="english">White</td></tr>
+                            <tr><td class="spanish">Blanco</td><td class="english" onclick="showImage('White', 'images/blanco.PNG')" style="cursor:pointer;">White</td></tr>
+                        <tr><td class="spanish">Negro</td><td class="english">Black</td></tr>
+                            <tr><td class="spanish">Negro</td><td class="english" onclick="showImage('Black', 'images/negro.PNG')" style="cursor:pointer;">Black</td></tr>
+                        <tr><td class="spanish">Naranja</td><td class="english">Orange</td></tr>
+                            <tr><td class="spanish">Naranja</td><td class="english" onclick="showImage('Orange', 'images/naranja.PNG')" style="cursor:pointer;">Orange</td></tr>
+                        <tr><td class="spanish">Marrón</td><td class="english">Brown</td></tr>
+                            <tr><td class="spanish">Marrón</td><td class="english" onclick="showImage('Brown', 'images/marron.PNG')" style="cursor:pointer;">Brown</td></tr>
+                        <tr><td class="spanish">Rosa</td><td class="english">Pink</td></tr>
+                            <tr><td class="spanish">Rosa</td><td class="english" onclick="showImage('Pink', 'images/rosado.PNG')" style="cursor:pointer;">Pink</td></tr>
+                        <tr><td class="spanish">Morado</td><td class="english">Purple</td></tr>
+                            <tr><td class="spanish">Morado</td><td class="english" onclick="showImage('Purple', 'images/morado.PNG')" style="cursor:pointer;">Purple</td></tr>
+                    </table>
+                </div>
+                <div class="basic-item">
+                    <h3>Meses del Año</h3>
+                        <!-- # Las imágenes de los meses van en: images/images/months/january.png, february.png, ... -->
+                    <table class="vocab-table">
+                        <tr><td class="spanish">Enero</td><td class="english">January</td></tr>
+                            <tr><td class="spanish">Enero</td><td class="english" onclick="showImage('January', 'images/enero.PNG')" style="cursor:pointer;">January</td></tr>
+                        <tr><td class="spanish">Febrero</td><td class="english">February</td></tr>
+                            <tr><td class="spanish">Febrero</td><td class="english" onclick="showImage('February', 'images/febrero.PNG')" style="cursor:pointer;">February</td></tr>
+                        <tr><td class="spanish">Marzo</td><td class="english">March</td></tr>
+                            <tr><td class="spanish">Marzo</td><td class="english" onclick="showImage('March', 'images/marzo.PNG')" style="cursor:pointer;">March</td></tr>
+                        <tr><td class="spanish">Abril</td><td class="english">April</td></tr>
+                            <tr><td class="spanish">Abril</td><td class="english" onclick="showImage('April', 'images/abril.PNG')" style="cursor:pointer;">April</td></tr>
+                        <tr><td class="spanish">Mayo</td><td class="english">May</td></tr>
+                            <tr><td class="spanish">Mayo</td><td class="english" onclick="showImage('May', 'images/mayo.PNG')" style="cursor:pointer;">May</td></tr>
+                        <tr><td class="spanish">Junio</td><td class="english">June</td></tr>
+                            <tr><td class="spanish">Junio</td><td class="english" onclick="showImage('June', 'images/junio.PNG')" style="cursor:pointer;">June</td></tr>
+                        <tr><td class="spanish">Julio</td><td class="english">July</td></tr>
+                            <tr><td class="spanish">Julio</td><td class="english" onclick="showImage('July', 'images/julio.PNG')" style="cursor:pointer;">July</td></tr>
+                        <tr><td class="spanish">Agosto</td><td class="english">August</td></tr>
+                            <tr><td class="spanish">Agosto</td><td class="english" onclick="showImage('August', 'images/agosto.PNG')" style="cursor:pointer;">August</td></tr>
+                        <tr><td class="spanish">Septiembre</td><td class="english">September</td></tr>
+                            <tr><td class="spanish">Septiembre</td><td class="english" onclick="showImage('September', 'images/septiembre.PNG')" style="cursor:pointer;">September</td></tr>
+                        <tr><td class="spanish">Octubre</td><td class="english">October</td></tr>
+                            <tr><td class="spanish">Octubre</td><td class="english" onclick="showImage('October', 'images/octubre.PNG')" style="cursor:pointer;">October</td></tr>
+                        <tr><td class="spanish">Noviembre</td><td class="english">November</td></tr>
+                            <tr><td class="spanish">Noviembre</td><td class="english" onclick="showImage('November', 'images/noviembre.PNG')" style="cursor:pointer;">November</td></tr>
+                        <tr><td class="spanish">Diciembre</td><td class="english">December</td></tr>
+                            <tr><td class="spanish">Diciembre</td><td class="english" onclick="showImage('December', 'images/diciembre.PNG')" style="cursor:pointer;">December</td></tr>
+                    </table>
+                </div>
+                <div class="basic-item">
+                    <h3>Estaciones del año</h3>
+                        <!-- # Las imágenes de las estaciones van en: images/images/seasons/spring.png, summer.png, autumn.png, winter.png -->
+                    <table class="vocab-table">
+                        <tr><td class="spanish">Primavera</td><td class="english">Spring</td></tr>
+                            <tr><td class="spanish">Primavera</td><td class="english" onclick="showImage('Spring', 'images/primavera.PNG')" style="cursor:pointer;">Spring</td></tr>
+                        <tr><td class="spanish">Verano</td><td class="english">Summer</td></tr>
+                            <tr><td class="spanish">Verano</td><td class="english" onclick="showImage('Summer', 'images/verano.PNG')" style="cursor:pointer;">Summer</td></tr>
+                        <tr><td class="spanish">Otoño</td><td class="english">Autumn / Fall</td></tr>
+                            <tr><td class="spanish">Otoño</td><td class="english" onclick="showImage('Autumn', 'images/otono.PNG')" style="cursor:pointer;">Autumn / Fall</td></tr>
+                        <tr><td class="spanish">Invierno</td><td class="english">Winter</td></tr>
+                            <tr><td class="spanish">Invierno</td><td class="english" onclick="showImage('Winter', 'images/invierno.PNG')" style="cursor:pointer;">Winter</td></tr>
+                    </table>
+                </div>
+                <div class="basic-item">
+                    <h3>Días de la Semana</h3>
+                        <!-- # Las imágenes de los días van en: images/images/days/monday.png, tuesday.png, ... -->
+                    <table class="vocab-table">
+                        <tr><td class="spanish">Lunes</td><td class="english">Monday</td></tr>
+                            <tr><td class="spanish">Lunes</td><td class="english" onclick="showImage('Monday', 'images/lunes.PNG')" style="cursor:pointer;">Monday</td></tr>
+                        <tr><td class="spanish">Martes</td><td class="english">Tuesday</td></tr>
+                            <tr><td class="spanish">Martes</td><td class="english" onclick="showImage('Tuesday', 'images/martes.PNG')" style="cursor:pointer;">Tuesday</td></tr>
+                        <tr><td class="spanish">Miércoles</td><td class="english">Wednesday</td></tr>
+                            <tr><td class="spanish">Miércoles</td><td class="english" onclick="showImage('Wednesday', 'images/miércoles.PNG')" style="cursor:pointer;">Wednesday</td></tr>
+                        <tr><td class="spanish">Jueves</td><td class="english">Thursday</td></tr>
+                            <tr><td class="spanish">Jueves</td><td class="english" onclick="showImage('Thursday', 'images/jueves.PNG')" style="cursor:pointer;">Thursday</td></tr>
+                        <tr><td class="spanish">Viernes</td><td class="english">Friday</td></tr>
+                            <tr><td class="spanish">Viernes</td><td class="english" onclick="showImage('Friday', 'images/viernes.PNG')" style="cursor:pointer;">Friday</td></tr>
+                        <tr><td class="spanish">Sábado</td><td class="english">Saturday</td></tr>
+                            <tr><td class="spanish">Sábado</td><td class="english" onclick="showImage('Saturday', 'images/sabado.PNG')" style="cursor:pointer;">Saturday</td></tr>
+                        <tr><td class="spanish">Domingo</td><td class="english">Sunday</td></tr>
+                            <tr><td class="spanish">Domingo</td><td class="english" onclick="showImage('Sunday', 'images/domingo.PNG')" style="cursor:pointer;">Sunday</td></tr>
+                    </table>
+                </div>
+                <div class="basic-item">
+                    <h3>Animales</h3>
+                        <!-- # Las imágenes de los animales van en: images/images/animals/dog.png, cat.png, ... -->
+                    <table class="vocab-table">
+                        <tr><td class="spanish">Perro</td><td class="english">Dog</td></tr>
+                            <tr><td class="spanish">Perro</td><td class="english" onclick="showImage('Dog', 'images/perro.PNG')" style="cursor:pointer;">Dog</td></tr>
+                        <tr><td class="spanish">Gato</td><td class="english">Cat</td></tr>
+                            <tr><td class="spanish">Gato</td><td class="english" onclick="showImage('Cat', 'images/gato.PNG')" style="cursor:pointer;">Cat</td></tr>
+                        <tr><td class="spanish">Pájaro</td><td class="english">Bird</td></tr>
+                            <tr><td class="spanish">Pájaro</td><td class="english" onclick="showImage('Bird', 'images/pajaro.PNG')" style="cursor:pointer;">Bird</td></tr>
+                        <tr><td class="spanish">Pez</td><td class="english">Fish</td></tr>
+                            <tr><td class="spanish">Pez</td><td class="english" onclick="showImage('Fish', 'images/pez.PNG')" style="cursor:pointer;">Fish</td></tr>
+                        <tr><td class="spanish">Caballo</td><td class="english">Horse</td></tr>
+                            <tr><td class="spanish">Caballo</td><td class="english" onclick="showImage('Horse', 'images/caballo.PNG')" style="cursor:pointer;">Horse</td></tr>
+                        <tr><td class="spanish">Vaca</td><td class="english">Cow</td></tr>
+                            <tr><td class="spanish">Vaca</td><td class="english" onclick="showImage('Cow', 'images/vaca.PNG')" style="cursor:pointer;">Cow</td></tr>
+                        <tr><td class="spanish">Oveja</td><td class="english">Sheep</td></tr>
+                            <tr><td class="spanish">Oveja</td><td class="english" onclick="showImage('Sheep', 'images/oveja.PNG')" style="cursor:pointer;">Sheep</td></tr>
+                        <tr><td class="spanish">Cerdo</td><td class="english">Pig</td></tr>
+                            <tr><td class="spanish">Cerdo</td><td class="english" onclick="showImage('Pig', 'images/cerdo.PNG')" style="cursor:pointer;">Pig</td></tr>
+                    </table>
+                </div>
+                <div class="basic-item">
+                    <h3>Frutas</h3>
+                        <!-- # Las imágenes de las frutas van en: images/images/fruits/apple.png, banana.png, ... -->
+                    <table class="vocab-table">
+                        <tr><td class="spanish">Manzana</td><td class="english">Apple</td></tr>
+                            <tr><td class="spanish">Manzana</td><td class="english" onclick="showImage('Apple', 'images/manzana.PNG')" style="cursor:pointer;">Apple</td></tr>
+                        <tr><td class="spanish">Banana / Plátano</td><td class="english">Banana</td></tr>
+                            <tr><td class="spanish">Banana / Plátano</td><td class="english" onclick="showImage('Banana', 'images/banana.PNG')" style="cursor:pointer;">Banana</td></tr>
+                        <tr><td class="spanish">Naranja</td><td class="english">Orange</td></tr>
+                            <tr><td class="spanish">Naranja</td><td class="english" onclick="showImage('Orange', 'images/naranja.PNG')" style="cursor:pointer;">Orange</td></tr>
+                        <tr><td class="spanish">Pera</td><td class="english">Pear</td></tr>
+                            <tr><td class="spanish">Pera</td><td class="english" onclick="showImage('Pear', 'images/pera.PNG')" style="cursor:pointer;">Pear</td></tr>
+                        <tr><td class="spanish">Uva</td><td class="english">Grape</td></tr>
+                            <tr><td class="spanish">Uva</td><td class="english" onclick="showImage('Grape', 'images/uva.PNG')" style="cursor:pointer;">Grape</td></tr>
+                        <tr><td class="spanish">Sandía</td><td class="english">Watermelon</td></tr>
+                            <tr><td class="spanish">Sandía</td><td class="english" onclick="showImage('Watermelon', 'images/sandia.PNG')" style="cursor:pointer;">Watermelon</td></tr>
+                        <tr><td class="spanish">Fresa</td><td class="english">Strawberry</td></tr>
+                            <tr><td class="spanish">Fresa</td><td class="english" onclick="showImage('Strawberry', 'images/fresa.PNG')" style="cursor:pointer;">Strawberry</td></tr>
+                    </table>
+                </div>
+                <div class="basic-item">
+                    <h3>Comidas</h3>
+                        <!-- # Las imágenes de las comidas van en: images/images/food/bread.png, rice.png, ... -->
+                    <table class="vocab-table">
+                        <tr><td class="spanish">Pan</td><td class="english">Bread</td></tr>
+                            <tr><td class="spanish">Pan</td><td class="english" onclick="showImage('Bread', 'images/pan.PNG')" style="cursor:pointer;">Bread</td></tr>
+                        <tr><td class="spanish">Arroz</td><td class="english">Rice</td></tr>
+                            <tr><td class="spanish">Arroz</td><td class="english" onclick="showImage('Rice', 'images/arroz.PNG')" style="cursor:pointer;">Rice</td></tr>
+                        <tr><td class="spanish">Pollo</td><td class="english">Chicken</td></tr>
+                            <tr><td class="spanish">Pollo</td><td class="english" onclick="showImage('Chicken', 'images/pollo.PNG')" style="cursor:pointer;">Chicken</td></tr>
+                        <tr><td class="spanish">Queso</td><td class="english">Cheese</td></tr>
+                            <tr><td class="spanish">Queso</td><td class="english" onclick="showImage('Cheese', 'images/queso.PNG')" style="cursor:pointer;">Cheese</td></tr>
+                        <tr><td class="spanish">Carne</td><td class="english">Meat</td></tr>
+                            <tr><td class="spanish">Carne</td><td class="english" onclick="showImage('Meat', 'images/carne.PNG')" style="cursor:pointer;">Meat</td></tr>
+                        <tr><td class="spanish">Huevo</td><td class="english">Egg</td></tr>
+                            <tr><td class="spanish">Huevo</td><td class="english" onclick="showImage('Egg', 'images/huevo.PNG')" style="cursor:pointer;">Egg</td></tr>
+                    </table>
+                </div>
+                <div class="basic-item">
+                    <h3>Vegetales</h3>
+                        <!-- # Las imágenes de los vegetales van en: images/images/vegetables/carrot.png, lettuce.png, ... -->
+                    <table class="vocab-table">
+                        <tr><td class="spanish">Zanahoria</td><td class="english">Carrot</td></tr>
+                            <tr><td class="spanish">Zanahoria</td><td class="english" onclick="showImage('Carrot', 'images/zanahoria.PNG')" style="cursor:pointer;">Carrot</td></tr>
+                        <tr><td class="spanish">Lechuga</td><td class="english">Lettuce</td></tr>
+                            <tr><td class="spanish">Lechuga</td><td class="english" onclick="showImage('Lettuce', 'images/lechuga.PNG')" style="cursor:pointer;">Lettuce</td></tr>
+                        <tr><td class="spanish">Papa / Patata</td><td class="english">Potato</td></tr>
+                            <tr><td class="spanish">Papa / Patata</td><td class="english" onclick="showImage('Potato', 'images/papa.PNG')" style="cursor:pointer;">Potato</td></tr>
+                        <tr><td class="spanish">Tomate</td><td class="english">Tomato</td></tr>
+                            <tr><td class="spanish">Tomate</td><td class="english" onclick="showImage('Tomato', 'images/tomate.PNG')" style="cursor:pointer;">Tomato</td></tr>
+                        <tr><td class="spanish">Cebolla</td><td class="english">Onion</td></tr>
+                            <tr><td class="spanish">Cebolla</td><td class="english" onclick="showImage('Onion', 'images/cebolla.PNG')" style="cursor:pointer;">Onion</td></tr>
+                        <tr><td class="spanish">Brócoli</td><td class="english">Broccoli</td></tr>
+                            <tr><td class="spanish">Brócoli</td><td class="english" onclick="showImage('Broccoli', 'images/broccoli.PNG')" style="cursor:pointer;">Broccoli</td></tr>
+                        <tr><td class="spanish">Espinaca</td><td class="english">Spinach</td></tr>
+                            <tr><td class="spanish">Espinaca</td><td class="english" onclick="showImage('Spinach', 'images/espinaca.PNG')" style="cursor:pointer;">Spinach</td></tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="continue-section container">
+        <h2>¡Continúa Aprendiendo!</h2>
+        <p>Ahora que conoces los fundamentos básicos del inglés, es hora de practicar de forma divertida e interactiva.</p>
+        <button class="continue-btn" onclick="window.open('https://scratch.mit.edu', '_blank')">
+            Seguiremos Aprendiendo en Scratch
+        </button>
+    </div>
+
+    <footer class="footer container">
+        <img class="logo-2" src="images/a_logo_design_for_image_-Photoroom.png" alt="">
+        <div class="links">
+            <h4>Cursos</h4>
+            <ul>
+                <li><a href="inglesbasicofinal.index.html">Inglés Básico</a></li>
+                <li><a href="inglesinermedio.index.html">Inglés Intermedio</a></li>
+                <li><a href="conversasion.index.html">Conversación</a></li>
+                <li><a href="vocabulario.ind3ex.html">Vocabulario</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <h4>Ayuda Primera Persona</h4>
+            <ul>
+                <li><a href="https://www.dictionary.com/browse/fag">FAG</a></li>
+                <li><a href="soporteindex.html">Soporte</a></li>
+                <li><a href="contactosindex.html">Contacto</a></li>
+                <li><a href="terminosycondiciones.index.html">Termino</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <h4>Ayuda Segunda Persona</h4>
+            <ul>
+                <li><a href="https://www.dictionary.com/browse/fag">FAG</a></li>
+                <li><a href="soporteindex.html">Soporte</a></li>
+                <li><a href="contactosindex.html">Contacto</a></li>
+                <li><a href="terminosycondiciones.index.html">Termino</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <h4>Redes Sociales</h4>
+            <div class="socials">
+                <a href="https://www.facebook.com/profile.php?id=61577921922825">
+                    <div class="social">
+                        <img src="images/images/s1.svg" alt="">
+                    </div>
+                </a>
+                <a href="https://x.com/C_A_English">
+                    <div class="social">
+                        <img src="images/images/s2.svg" alt="">
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/c_a_english_academy/">
+                    <div class="social">
+                        <img src="images/images/s3.svg" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

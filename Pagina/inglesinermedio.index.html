@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inglés Intermedio - Nivel B1/B2</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@400,500,600,700,800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #101116;
+            color: #A0A0A0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        header {
+            background-image: url(images/images/bg.jpg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .menu{
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+        }
+        .logo {
+            width: 150px;
+        }
+        .menu .navbar ul {
+            list-style: none;
+        }
+        .menu .navbar ul li {
+            position: relative;
+            float: left;
+        }
+        .menu .navbar ul li a {
+            font-size: 18px;
+            padding: 20px;
+            color: #FDFDFD;
+            display: block;
+            text-transform: uppercase;
+        }
+        .menu .navbar ul li a:hover {
+            color: #E70825;
+        }
+        #menu {
+            display: none;
+        }
+        .menu-icono {
+            width: 25px;
+        }
+        .menu label {
+            cursor: pointer;
+            display: none;
+        }
+        /* Adapted header */
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 0 60px 0;
+        }
+        .header-txt {
+            width: 60%;
+            padding-right: 25px;
+            text-align: center;
+        }
+        .header-txt h1 {
+            font-size: 55px;
+            line-height: 70px;
+            font-weight: 800;
+            color:#FDFDFD;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        .header-txt .subtitle {
+            font-size: 22px;
+            color: #A0A0A0;
+            margin-bottom: 10px;
+        }
+        .progress-bar {
+            background: rgba(255,255,255,0.2);
+            height: 8px;
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+        .progress-fill {
+            background: #48bb78;
+            height: 100%;
+            width: 65%;
+            border-radius: 4px;
+            transition: width 0.3s ease;
+        }
+
+        .main-content {
+            background: rgba(36,37,42,0.98);
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.20);
+            padding: 42px 40px 32px 40px;
+            margin-bottom: 60px;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        .card {
+            background: #1a1b20;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid #24252A;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        .card h2 {
+            color: #E70825;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            border-bottom: 3px solid #E70825;
+            padding-bottom: 10px;
+        }
+        .grammar-example {
+            background: #24252A;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border-left: 4px solid #E70825;
+        }
+        .vocabulary-word {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background: #23242a;
+            margin: 8px 0;
+            border-radius: 6px;
+            transition: background 0.3s ease;
+        }
+        .vocabulary-word:hover {
+            background: #2a2b31;
+        }
+        .word {
+            font-weight: bold;
+            color: #FDFDFD;
+        }
+        .meaning {
+            color: #A0A0A0;
+            font-style: italic;
+        }
+        .exercise {
+            background: #23242a;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px solid #E70825;
+        }
+        .exercise h3 {
+            color: #E70825;
+            margin-bottom: 15px;
+        }
+        .question {
+            margin: 15px 0;
+            padding: 10px;
+            background: #1a1b20;
+            border-radius: 5px;
+        }
+        .back-button {
+            text-align: center;
+            margin-top: 50px;
+            padding: 40px;
+        }
+        .btn-back {
+            background: linear-gradient(90deg, #E70825 0%, #900314 100%);
+            color: white;
+            padding: 20px 40px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 8px 25px rgba(220,20,60,0.3);
+        }
+        .btn-back:hover {
+            background: linear-gradient(90deg, #f3031f 0%, #bc0217 100%);
+            color: #FDFDFD;
+            box-shadow: 0 12px 35px rgba(220,20,60,0.4);
+            transform: translateY(-3px);
+        }
+        @media (max-width: 991px) {
+            .main-content {
+                padding: 18px 4vw;
+            }
+            .header-content {
+                flex-direction: column;
+                padding: 80px 10px 30px 10px;
+            }
+            .header-txt {
+                width: 100%;
+                padding: 0;
+                text-align: center;
+            }
+            .header-txt h1 {
+                font-size: 2.4rem;
+            }
+            .footer {
+                padding: 30px; 
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .links h4 {
+                margin: 25px 0 10px 0;
+            }
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .footer {
+            padding: 100px 0 60px 0;
+            display: flex;
+            justify-content: space-between;
+            background-color: #101116;
+        }
+        .logo-2 {
+            width: 150px;
+        }
+        .links h4 {
+            color: #fdfdfd;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+        .links ul li a {
+            color: #fdfdfd;
+            font-size: 16px;
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+        .socials {
+            display: flex;
+        }
+        .social {
+            margin: 0 10px;
+            height: 40px;
+            width: 40px;
+            border: 1px solid #DD241B;
+            border-radius: 50%;
+        }
+        .social:hover {
+            background-color: #DD241B;
+        }
+        .social img {
+            margin: 8px 0 0 10px;
+        }
+        ul {
+            margin-left: 25px;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="menu container">
+            <a href="#"><img src="images/a_logo_design_for_image_-Photoroom.png" class="logo" alt="logo"></a>
+            <input type="checkbox" id="menu">
+            <label for="menu"><img src="images/images/menu.png" class="menu-icono" alt="menu-icono"></label>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="inicioindex.html">Inicio</a></li>
+                    <li><a href="#">Aprender Inglés</a></li>
+                    <li><a href="contactosindex.html">Contactos</a></li>
+                    <li><a href="creditosindex.html">Créditos</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="header-content container">
+            <div class="header-txt">
+                <h1>🎓 Inglés Intermedio</h1>
+                <p class="subtitle">Nivel B1/B2 - Construye tu confianza en inglés</p>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <p style="margin-top: 10px; opacity: 0.8;">Progreso del curso: 65%</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content container">
+        <div class="content-grid">
+
+            <div class="card">
+                <h2>📚 Gramática Intermedia</h2>
+                
+                <h3>Present Perfect vs Past Simple</h3>
+                <div class="grammar-example">
+                    <strong>Present Perfect:</strong> I have lived here for 5 years.<br>
+                    <em>(Uso: experiencias, acciones que continúan)</em>
+                </div>
+                <div class="grammar-example">
+                    <strong>Past Simple:</strong> I lived in Paris in 2020.<br>
+                    <em>(Uso: acciones terminadas en tiempo específico)</em>
+                </div>
+
+                <h3>Conditional Sentences (Tipo 1 y 2)</h3>
+                <div class="grammar-example">
+                    <strong>First Conditional:</strong> If it rains, I will stay home.<br>
+                    <strong>Second Conditional:</strong> If I were rich, I would travel the world.
+                </div>
+            </div>
+
+            
+            <div class="card">
+                <h2>📖 Vocabulario Intermedio</h2>
+                
+                <h3>Palabras de Uso Común</h3>
+                <div class="vocabulary-word">
+                    <span class="word">Although</span>
+                    <span class="meaning">Aunque</span>
+                </div>
+                <div class="vocabulary-word">
+                    <span class="word">Therefore</span>
+                    <span class="meaning">Por lo tanto</span>
+                </div>
+                <div class="vocabulary-word">
+                    <span class="word">Moreover</span>
+                    <span class="meaning">Además</span>
+                </div>
+                <div class="vocabulary-word">
+                    <span class="word">Nevertheless</span>
+                    <span class="meaning">Sin embargo</span>
+                </div>
+                <div class="vocabulary-word">
+                    <span class="word">Consequently</span>
+                    <span class="meaning">En consecuencia</span>
+                </div>
+
+                <h3>Phrasal Verbs Esenciales</h3>
+                <div class="vocabulary-word">
+                    <span class="word">Give up</span>
+                    <span class="meaning">Rendirse</span>
+                </div>
+                <div class="vocabulary-word">
+                    <span class="word">Look forward to</span>
+                    <span class="meaning">Esperar con ansias</span>
+                </div>
+                <div class="vocabulary-word">
+                    <span class="word">Put off</span>
+                    <span class="meaning">Posponer</span>
+                </div>
+            </div>
+
+            
+            <div class="card">
+                <h2>📰 Comprensión de Lectura</h2>
+                
+                <h3>Texto de Práctica</h3>
+                <p style="background: #24252A; padding: 15px; border-radius: 8px; margin: 15px 0;">
+                    <strong>"The Benefits of Learning Languages"</strong><br><br>
+                    Learning a second language has numerous advantages. <em>Moreover</em>, research shows that bilingual people have better problem-solving skills. <em>Although</em> it can be challenging at first, the long-term benefits are significant. <em>Therefore</em>, many educators recommend starting language learning at an early age.
+                </p>
+
+                <div class="exercise">
+                    <h3>Preguntas de Comprensión</h3>
+                    <div class="question">
+                        <strong>1.</strong> What does research show about bilingual people?
+                    </div>
+                    <div class="question">
+                        <strong>2.</strong> Why do educators recommend early language learning?
+                    </div>
+                    <div class="question">
+                        <strong>3.</strong> Find three connector words in the text.
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="card">
+                <h2>💬 Práctica de Conversación</h2>
+                
+                <h3>Expresiones Útiles</h3>
+                <div class="grammar-example">
+                    <strong>Dar opiniones:</strong><br>
+                    • "In my opinion..."<br>
+                    • "I believe that..."<br>
+                    • "From my point of view..."
+                </div>
+
+                <div class="grammar-example">
+                    <strong>Mostrar acuerdo/desacuerdo:</strong><br>
+                    • "I completely agree with you."<br>
+                    • "I'm afraid I disagree."<br>
+                    • "That's a good point, but..."
+                </div>
+
+                <div class="exercise">
+                    <h3>Situación de Práctica</h3>
+                    <p><strong>Tema:</strong> Discussing travel experiences</p>
+                    <div class="question">
+                        <strong>Pregunta:</strong> "What's the most interesting place you have ever visited? Why did you find it interesting?"
+                    </div>
+                    <p><em>Practica usando Present Perfect y expresiones de opinión.</em></p>
+                </div>
+            </div>
+
+            
+            <div class="card">
+                <h2>✍️ Escritura Intermedia</h2>
+                
+                <h3>Estructura de Párrafos</h3>
+                <div class="grammar-example">
+                    <strong>1. Topic Sentence</strong> (Oración principal)<br>
+                    <strong>2. Supporting Details</strong> (Detalles de apoyo)<br>
+                    <strong>3. Concluding Sentence</strong> (Oración de conclusión)
+                </div>
+
+                <div class="exercise">
+                    <h3>Tarea de Escritura</h3>
+                    <p><strong>Tema:</strong> Write a paragraph about your favorite hobby</p>
+                    <p><em>Usa al menos 3 conectores y 100-120 palabras.</em></p>
+                    <div class="question">
+                        <strong>Conectores sugeridos:</strong> First, Additionally, However, Finally
+                    </div>
+                </div>
+            </div>
+
+            <!-- Listening -->
+            <div class="card">
+                <h2>🎧 Comprensión Auditiva</h2>
+                
+                <h3>Estrategias de Escucha</h3>
+                <div class="grammar-example">
+                    <strong>Pre-listening:</strong> Predice el contenido<br>
+                    <strong>While-listening:</strong> Toma notas de palabras clave<br>
+                    <strong>Post-listening:</strong> Verifica tu comprensión
+                </div>
+
+                <div class="exercise">
+                    <h3>Tipos de Audio para Practicar</h3>
+                    <div class="question">• Noticias cortas (BBC Learning English)</div>
+                    <div class="question">• Conversaciones telefónicas</div>
+                    <div class="question">• Presentaciones breves</div>
+                    <div class="question">• Podcasts para estudiantes</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-button">
+            <h2 style="color: white; margin-bottom: 20px;">¿Te sientes preparado para continuar?</h2>
+            <p style="color: rgba(255,255,255,0.9); margin-bottom: 30px; font-size: 1.1rem;">
+                Si sientes que necesitas reforzar tus bases antes de continuar con el nivel intermedio...
+            </p>
+            <a href="#" class="btn-back" onclick="showBasicMessage()">
+                🔄 No me siento preparado - Volver a practicar inglés básico
+            </a>
+        </div>
+    </main>
+
+
+    <footer class="footer container">
+        <img class="logo-2" src="images/a_logo_design_for_image_-Photoroom.png" alt="">
+        <div class="links">
+            <h4>Cursos</h4>
+            <ul>
+                <li><a href="inglesbasicofinal.index.html">Inglés Básico</a></li>
+                <li><a href="inglesinermedio.index.html">Inglés Intermedio</a></li>
+                <li><a href="conversasion.index.html">Conversación</a></li>
+                <li><a href="vocabulario.ind3ex.html">Vocabulario</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <h4>Ayuda Primera Persona</h4>
+            <ul>
+                <li><a href="https://www.dictionary.com/browse/fag">FAG</a></li>
+                <li><a href="soporteindex.html">Soporte</a></li>
+                <li><a href="contactosindex.html">Contacto</a></li>
+                <li><a href="terminosycondiciones.index.html">Termino</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <h4>Ayuda Segunda Persona</h4>
+            <ul>
+                <li><a href="https://www.dictionary.com/browse/fag">FAG</a></li>
+                <li><a href="soporteindex.html">Soporte</a></li>
+                <li><a href="contactosindex.html">Contacto</a></li>
+                <li><a href="terminosycondiciones.index.html">Termino</a></li>
+            </ul>
+        </div>
+        <div class="links">
+            <h4>Redes Sociales</h4>
+            <div class="socials">
+                <a href="https://www.facebook.com/profile.php?id=61577921922825">
+                    <div class="social">
+                        <img src="images/images/s1.svg" alt="">
+                    </div>
+                </a>
+                <a href="https://x.com/C_A_English">
+                    <div class="social">
+                        <img src="images/images/s2.svg" alt="">
+                    </div>
+                </a>
+                <a href="https://www.instagram.com/c_a_english_academy/">
+                    <div class="social">
+                        <img src="images/images/s3.svg" alt="">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function showBasicMessage() {
+            alert("¡Perfecto! Es importante tener bases sólidas. Te recomendamos practicar más el inglés básico antes de continuar con el nivel intermedio. ¡No te preocupes, cada estudiante tiene su propio ritmo!");
+            if(confirm("¿Te gustaría que te redirigiéramos a recursos de inglés básico?")) {
+                window.open("https://scratch.mit.edu/", "_blank");
+            }
+        }
+        window.addEventListener('load', function() {
+            const progressBar = document.querySelector('.progress-fill');
+            progressBar.style.width = '0%';
+            setTimeout(() => {
+                progressBar.style.width = '65%';
+            }, 500);
+        });
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-5px) scale(1.02)';
+            });
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
